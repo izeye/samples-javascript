@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Function Tests</title>
+</head>
+<body>
+<script>
+    function test() {
+        console.log('test');
+    }
+
+    for (var propertyName in this) {
+        var property = this[propertyName];
+        if (typeof(property) === 'function') {
+            console.log(property);
+        }
+    }
+</script>
+</body>
+</html>
