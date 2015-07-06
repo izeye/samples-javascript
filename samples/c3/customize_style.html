@@ -1,0 +1,35 @@
+<html>
+<head>
+    <link href="../../libs/c3/0.4.10/c3.css" rel="stylesheet" type="text/css">
+
+    <script src="../../libs/d3/3.5.5/d3.js" charset="utf-8"></script>
+    <script src="../../libs/c3/0.4.10/c3.js"></script>
+    
+    <style>
+        #chart .c3-line-data2 {
+            stroke-width: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="chart"></div>
+
+<button onclick="load();">Load</button>
+<button onclick="unload();">Unload</button>
+<button onclick="hide();">Hide</button>
+<button onclick="show();">Show</button>
+
+<script>
+    var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+            columns: [
+                ['data1', 300, 100, 250, 150, 300, 150, 500],
+                ['data2', 100, 200, 150, 50, 100, 250],
+                ['data3', 600, 700, 350, 450, 800, 550]
+            ]
+        }
+    });
+</script>
+</body>
+</html>
