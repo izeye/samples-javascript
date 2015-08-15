@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>json.human.js Tests</title>
+
+    <link rel="stylesheet" type="text/css" href="../../libs/json-human/json.human.css"/>
+    
+    <script src="../../libs/json-human/json.human.js"></script>
+</head>
+<body>
+<div id="output"></div>
+<script>
+    var input = {
+        "url" : [
+            "www.google.com",
+            "www.google.com",
+            {
+                "x" : "x-direction",
+                "y" : "y-direction",
+                "url" : "www.google.com"
+            }
+        ]
+    };
+    
+    var node = JsonHuman.format(input);
+    console.log(node);
+    
+    var output = document.getElementById('output');
+    output.appendChild(node);
+</script>
+</body>
+</html>
