@@ -1,0 +1,13 @@
+<html>
+<body>
+<script>
+    console.log(window);
+    console.log(location);
+    console.log(location.hash);
+    window.onhashchange = function (e) {
+        console.log(e);
+    };
+    location.hash = "new-hash";
+</script>
+</body>
+</html>
