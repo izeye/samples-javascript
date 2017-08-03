@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Order query Firefox 1.5 Example</title>
+    <script>
+        function onLoad() {
+            alert("onload");
+            loadOnlyFirst();
+
+            var currentTime = new Date();
+            var year = currentTime.getFullYear();
+            var month = currentTime.getMonth() + 1;
+            var day = currentTime.getDate();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var milliseconds = currentTime.getMilliseconds();
+            var displayTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+            document.getElementById("timeField").value = displayTime;
+        }
+
+        function loadOnlyFirst() {
+            document.zipForm.name.focus();
+        }
+    </script>
+</head>
+<body onload="onLoad();">
+<h2>Order query</h2>
+
+<form name="zipForm" action="http://www.example.com/formResult.html" method="get">
+    <label for="timeField">Date and time:</label>
+    <input type="text" id="timeField"><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br>
+    <label for="address">Email address:</label>
+    <input type="text" id="address"><br>
+    <label for="order">Order number:</label>
+    <input type="text" id="order"><br>
+    <input type="submit" value="Submit Query">
+</form>
+
+<a href="./sample_hello_world.html">hello_world</a>
+</body>
+</html>
