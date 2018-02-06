@@ -1,0 +1,42 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+</head>
+<body>
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var mixedChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      datasets: [{
+        label: 'Bar Dataset',
+        data: [1000, 2000, 3000, 4000],
+        yAxisID: "y-axis-1"
+      }, {
+        label: 'Line Dataset',
+        data: [50, 40, 30, 20],
+        yAxisID: "y-axis-2",
+
+        type: 'line'
+      }],
+      labels: ['January', 'February', 'March', 'April']
+    },
+    options: {
+      scales: {
+        yAxes: [
+          {
+            id: 'y-axis-1',
+            position: "left"
+          },
+          {
+            id: 'y-axis-2',
+            position: "right"
+          }
+        ]
+      }
+    }
+  });
+</script>
+</body>
+</html>
