@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../../libs/monaco-editor/vs/editor/editor.main.css">
+</head>
+<body>
+<div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
+<button onclick="print();">Print</button>
+<script>
+    var require = { paths: { 'vs': '../../libs/monaco-editor/vs' } };
+</script>
+<script src="../../libs/monaco-editor/vs/loader.js"></script>
+<script src="../../libs/monaco-editor/vs/editor/editor.main.nls.js"></script>
+<script src="../../libs/monaco-editor/vs/editor/editor.main.js"></script>
+<script>
+    var editor = monaco.editor.create(document.getElementById('container'), {
+      value: [
+        'function x() {',
+        '\tconsole.log("Hello, world!");',
+        '}'
+      ].join('\n'),
+      language: 'javascript'
+    });
+
+    function print() {
+      var value = editor.getValue();
+      console.log(value);
+    }
+</script>
+</body>
+</html>
